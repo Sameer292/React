@@ -90,7 +90,7 @@ function App() {
       </div>
       <div className="flex justify-between  w-5/6 min-[1000px]:w-[480px] items-center ">
         <h2 className="text-slate-300 text-2xl">Items</h2>
-        <button disabled className="flex items-center bg-blue-700   h-10 p-3 rounded-lg hover:scale-105 active:scale-95 duration-150">
+        <button  className="flex items-center bg-blue-700  disabled:bg-slate-700 h-10 p-3 rounded-lg hover:scale-105 active:scale-95 duration-150" disabled={true}>
           Sort
         </button>
       </div>
