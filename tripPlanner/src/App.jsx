@@ -108,6 +108,7 @@ function App() {
                   defaultChecked={ischecked[index]}
                   checked={ischecked[index]}
                   onChange={() => updatestrikedarr(index)}
+                  className="p-3"
                 />
                 <p
                   className={`w-4/5 truncate ml-5 ${
