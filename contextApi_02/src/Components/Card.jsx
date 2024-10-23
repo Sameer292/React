@@ -3,7 +3,7 @@ export default function Card() {
   return (
       <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <a href="/">
-              <img className="p-8 rounded-t-lg" src="https://scontent.fjkr2-1.fna.fbcdn.net/v/t39.30808-6/417569889_1833923120457347_2875692118169580587_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Ezk_Fw24M1IQ7kNvgEbOM5M&_nc_ht=scontent.fjkr2-1.fna&_nc_gid=AMi8rPLRL_mU4mDPMdOOg7T&oh=00_AYDNl3IQq9-9MoFZXPsYkZUMLhkZNRamxlvFXaQ_g_PjfA&oe=6709C6EA" alt="product_image1" />
+              <img className="p-8 rounded-t-lg" src="https://scontent.fjkr2-1.fna.fbcdn.net/v/t39.30808-6/417569889_1833923120457347_2875692118169580587_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=PVk5DhGdoFgQ7kNvgFOR6g6&_nc_zt=23&_nc_ht=scontent.fjkr2-1.fna&_nc_gid=AlbZMQ9vUUaymRJLFFxjqmt&oh=00_AYBuazDpOfSMfVUiA_KeIzz06FBB2S6l8WD8JZENY-GH4A&oe=671AEA6A" alt="product_image1" />
           </a>
           <div className="px-5 pb-5">
               <a href="/">
