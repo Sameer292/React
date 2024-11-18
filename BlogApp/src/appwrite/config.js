@@ -7,7 +7,9 @@ export class Service {
   bucket;
 
   constructor() {
-    this.client.setEndpoint(conf.appwriteUrl).setProject(conf.projectId);
+    this.client
+    .setEndpoint(conf.appwriteUrl)
+    .setProject(conf.projectId);
     this.databases = new Databases(this.client);
     this.bucket = new Storage(this.client);
   }
@@ -42,10 +44,12 @@ export class Service {
           content,
           featuredimage,
           status,
+
         }
       );
     } catch (error) {
-      throw error;
+      console.log("ERRORR!!!::", error);
+      
     }
   }
 
@@ -75,16 +79,41 @@ export class Service {
     }
   }
 
-  async getPosts() {
-try {
-    
-} catch (error) {
-    return error
-}
-
-
-
+  async getPosts(queries = [Query.equal("status", "active")]) {
+    try {
+      return await this.databases.listDocuments(
+        conf.databaseId,
+        conf.collectionId,
+        queries
+      );
+    } catch (error) {
+      return error;
+    }
   }
+
+  async uploadFile(file) {
+    try {
+      return await this.bucket.createFile(conf.bucketId, ID.unique(), file);
+    } catch (error) {
+      throw error;
+      return false;
+    }
+  }
+
+  async deleteFile(fileId) {
+    try {
+      await this.bucket.deleteFile(conf.bucketId, fileId);
+      return true;
+    } catch (error) {
+      throw error;
+      return false;
+    }
+  }
+
+   getFilePreview(fileId){
+    return this.bucket.getFilePreview(conf.bucketId,fileId)
+  }
+
 }
 
 const service = new Service();

@@ -30,7 +30,10 @@ export class AuthService {
 
   async login({ email, password }) {
     try {
-      const session = await this.account.createEmailPasswordSession(email,password);
+      const session = await this.account.createEmailPasswordSession(
+        email,
+        password
+      );
       return session;
     } catch (error) {
       throw error;
@@ -41,21 +44,20 @@ export class AuthService {
     try {
       return await this.account.get();
     } catch (error) {
-      throw error;
+      console.log("ERROR!!::", error);
+      // throw error
+      return null;
     }
-
-    return null;
   }
 
   async logout() {
     try {
-        await this.account.deleteSessions();        
+      await this.account.deleteSessions();
     } catch (error) {
-        throw error
+      throw error;
     }
   }
 }
 
 const authService = new AuthService();
-authService.createAccount({});
 export default authService;
